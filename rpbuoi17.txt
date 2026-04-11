@@ -1,0 +1,74 @@
+1. Cach dung select * from sach trong java bang arraylist goi ten tat ca sach ra
+
+2. "SELECT * FROM sach where id= '"+t.getId()+"'" de goi sach co id ra
+
+3."SELECT * FROM sach where"+condition goi ra voi condition 
+
+4.normal:
+SELECT * FROM khachhang WHERE hoVaTen LIKE "Nguyen%";
+
+error SQL Injection
+SELECT * FROM khachhang WHERE hoVaTen LIKE "Nguyen%" OR 1=1; -- "
+
+-- Truy vấn bảng USER
+SELECT * FROM USER WHERE username="titv" OR PASSWORD="123456";
+
+-- Nếu người dùng nhập:
+-- user: a1" or 1=1 ;--  
+-- password: 123
+
+-- Thì câu SQL sẽ trở thành:
+SELECT * FROM USER WHERE username="a1" or 1=1 ;-- " OR PASSWORD="123";
+
+5.Dung preparestatement thay cho statement de chong bi tan cong 
+
+6.Anh Xa kieu du lieu JDBC Type va Java Type:
+ARRAY — java.sql.Array  
+BIGINT — long  
+BINARY — byte[]  
+BIT — boolean  
+BLOB — java.sql.Blob  
+BOOLEAN — boolean  
+CHAR — String  
+CLOB — java.sql.Clob  
+DATALINK — java.net.URL  
+DATE — java.sql.Date  
+DATE — java.time.LocalDate  
+
+DECIMAL — java.math.BigDecimal  
+DISTINCT — Mapping of underlying type  
+DOUBLE — double  
+FLOAT — double  
+INTEGER — int  
+JAVA_OBJECT — underlying Java class  
+LONGVARCHAR — String  
+LONGVARBINARY — byte[]  
+LONGVARCHAR — String  
+NCHAR — String  
+NCLOB — java.sql.NClob  
+NUMERIC — java.math.BigDecimal
+NVARCHAR                String
+NULL                    NULL SQL value
+REAL                    float
+REF                     java.sql.Ref
+REF_CURSOR              java.sql.ResultSet
+ROWID                   java.sql.RowId
+SMALLINT                short
+SQLXML                  java.sql.SQLXML
+STRUCT                  java.sql.Struct
+TIME                    java.sql.Time
+TIME                    java.time.LocalTime
+TIME_WITH_TIMEZONE      java.time.OffsetTime
+TIMESTAMP               java.sql.Timestamp
+TIMESTAMP_WITH_TIMEZONE java.time.OffsetDateTime
+TINYINT                 byte
+VARBINARY               byte[]
+VARCHAR			String
+
+6.ORM la ky thuat anh xa kieu du lieu, truy van du lieu 1 cach nhanh hon, la mot phan cua Java EE cung co the dung cho Java SE bang cach su dung JPA
+EX: 
+INSERT IN TO table_name VALUES(..., ...., ....,)
+ thong qua JPA:
+SinhvienDAO.save(ojb) hoac saveorupdate(ojb)
+
+7.Hibarnate la thu vien trong lap trinh java va no hien thuc lai tat ca cac tinh nang ve nhung yeu cau jpa la 1 cai framework giup cho tuong tac cac database thong qua hibernate co the tao table rat nhanh va su dung de truy van trong database
