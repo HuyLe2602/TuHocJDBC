@@ -1,0 +1,79 @@
+1. Using SELECT * FROM sach in Java with ArrayList to call all books
+
+2.Query by ID:
+ "SELECT * FROM sach where id= '"+t.getId()+"'" 
+
+3.
+Query with condition:
+"SELECT * FROM sach where"+condition 
+
+4.normal:
+SELECT * FROM khachhang WHERE hoVaTen LIKE "Nguyen%";
+
+error SQL Injection
+SELECT * FROM khachhang WHERE hoVaTen LIKE "Nguyen%" OR 1=1; -- "
+
+-- Query table USER
+SELECT * FROM USER WHERE username="titv" OR PASSWORD="123456";
+
+-- If user input is::
+-- user: a1" or 1=1 ;--  
+-- password: 123
+
+-- Then the SQL becomes:
+SELECT * FROM USER WHERE username="a1" or 1=1 ;-- " OR PASSWORD="123";
+
+5.Use PreparedStatement instead of Statement to prevent SQL Injection. 
+
+6.Mapping JDBC Types to Java Types:
+ARRAY — java.sql.Array  
+BIGINT — long  
+BINARY — byte[]  
+BIT — boolean  
+BLOB — java.sql.Blob  
+BOOLEAN — boolean  
+CHAR — String  
+CLOB — java.sql.Clob  
+DATALINK — java.net.URL  
+DATE — java.sql.Date  
+DATE — java.time.LocalDate  
+
+DECIMAL — java.math.BigDecimal  
+DISTINCT — Mapping of underlying type  
+DOUBLE — double  
+FLOAT — double  
+INTEGER — int  
+JAVA_OBJECT — underlying Java class  
+LONGVARCHAR — String  
+LONGVARBINARY — byte[]  
+LONGVARCHAR — String  
+NCHAR — String  
+NCLOB — java.sql.NClob  
+NUMERIC — java.math.BigDecimal
+NVARCHAR                String
+NULL                    NULL SQL value
+REAL                    float
+REF                     java.sql.Ref
+REF_CURSOR              java.sql.ResultSet
+ROWID                   java.sql.RowId
+SMALLINT                short
+SQLXML                  java.sql.SQLXML
+STRUCT                  java.sql.Struct
+TIME                    java.sql.Time
+TIME                    java.time.LocalTime
+TIME_WITH_TIMEZONE      java.time.OffsetTime
+TIMESTAMP               java.sql.Timestamp
+TIMESTAMP_WITH_TIMEZONE java.time.OffsetDateTime
+TINYINT                 byte
+VARBINARY               byte[]
+VARCHAR			String
+
+6.ORM (Object-Relational Mapping):  
+A technique for mapping data types and querying data more efficiently. It is part of Java EE but can also be used in Java SE via JPA.
+EX: 
+INSERT IN TO table_name VALUES(..., ...., ....,)
+ through JPA:
+SinhvienDAO.save(ojb) hoac saveorupdate(ojb)
+
+7.Hibernate:  
+Hibernate is a Java library that implements all JPA requirements. It is a framework that facilitates database interaction. With Hibernate, tables can be created quickly, and queries can be executed easily.
