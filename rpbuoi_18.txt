@@ -1,0 +1,106 @@
+1.
+The term cloud computing refers to a massive network of computers, called servers, located in data centers scattered around the world.
+Data centers are essentially huge warehouses, ranging from a few hectares to dozens of hectares, filled with powerful computers that can run software and store data.
+
+2.
+When you store files in the cloud, the data is sent via the internet to one of these data centers. Special software distributes and stores copies of your files across multiple servers.
+
+3.
+Data can be stored on multiple servers simultaneously across different countries, allowing faster access since the system connects you to the nearest server through the internet.
+
+4. Three types:
+
+-IaaS (Infrastructure as a Service): Provides basic resources such as virtual servers and storage capacity.
+
+-PaaS (Platform as a Service): Provides environments for developing, testing, and deploying applications.
+
+-SaaS (Software as a Service): Complete software delivered online, e.g., YouTube, Gmail.
+
+5. Advantages:
+
+-Convenience: access anytime, anywhere, from any device.
+
+-Saves storage space on devices.
+
+-Ensures data security.
+
+-Enables powerful applications and software without relying on hardware.
+
+-Provides automatic software updates.
+
+6. Challenges:
+
+-Security: Data is stored on servers you don’t directly control.
+
+-Internet dependency: Requires internet access to reach your data.
+
+7. Hyper-V
+Hyper-V is a virtualization platform developed by Microsoft that allows the creation and management of virtual machines (VMs) on a single physical computer or server.
+
+-Benefits:
+Cost savings.
+
+Maximizes hardware resource usage.
+
+Easy VM shutdown and backup management.
+
+High security through encryption, isolation, and login protection.
+
+Flexible development: test new software without affecting the main system.
+
+8. Hypervisor Types:
+
+Type 1: Runs directly on hardware and does not depend on a host operating system.
+
+Type 2: Runs as software on a host operating system, cannot directly access hardware resources, and therefore has lower performance.
+
+9.Hyper-V optimizes virtual machine performance better than VMware Workstation or VirtualBox.
+
+10. Key Features:
+Supports multiple virtual CPUs, with resource allocation as needed.
+
+Dynamic Memory: automatically adjusts RAM usage based on actual demand.
+
+Allows multiple operating systems to run on one machine.
+
+Live Migration: move a running VM from one physical server to another without interruption.
+
+Automatic VM failover to another server in case of hardware failure, ensuring high availability.
+
+Integration with Windows Containers and Kubernetes for microservices-based application deployment.
+
+11.
+When Hyper-V is activated, the system is divided into two regions: Root Partition (parent) and Child Partition (child).
+
+VMs communicate with hardware resources through an intermediate layer called the Hypervisor Layer.
+
+Thus, Hyper-V is essentially a Type 1 Hypervisor.
+
+CPU cores are divided into virtual cores and allocated to VMs as needed.
+
+Supports Dynamic Memory for automatic RAM adjustment per VM.
+
+Each VM can use virtual disks (VHD/VHDX) or access physical disks directly via Pass-through Disk.
+
+Uses VMBus technology as a high-speed communication channel, enabling VMs to interact with each other like with the host OS.
+
+12. Windows Server vs Windows:
+Windows Server:
+
+Supports Live Migration.
+
+Supports Hyper-V Replica for VM replication across servers.
+
+Direct SAN connection via Virtual Fiber Channel.
+
+SR-IOV improves network performance.
+
+Shared Virtual Hard Disk.
+
+Windows (client OS):
+
+Quick VM creation with default settings.
+
+VM Gallery: download preconfigured VMs from Microsoft or other providers.
+
+Default Virtual Switch is NAT.
